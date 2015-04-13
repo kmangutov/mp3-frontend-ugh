@@ -1,0 +1,26 @@
+<div class="list row" ng-controller='UsersViewController'>		
+
+    {{text}}
+
+    <a class="button small" href="#/addUserView">Add</a>
+
+
+    <table>
+      <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Tasks</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <tr ng-repeat="user in users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.pendingTasks.length }}</td>
+        <td><a class="button tiny" ng-click="go(user._id)">Go</a></td>
+        <td><a class="button tiny" ng-click="delete(user._id)">Delete</a></td>
+      </tr>
+    </table>
+</div>
+
